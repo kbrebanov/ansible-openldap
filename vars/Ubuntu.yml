@@ -1,0 +1,6 @@
+---
+# vars file for openldap (Ubuntu specific)
+
+openldap_packages:
+  - slapd
+  - ldap-utils

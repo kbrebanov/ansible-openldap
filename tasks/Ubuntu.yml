@@ -1,0 +1,7 @@
+---
+# tasks file for openldap (Ubuntu specific)
+
+- name: Install OpenLDAP packages
+  apt: name={{ item }} state=present update_cache=yes
+  with_items: openldap_packages
+  tags: openldap

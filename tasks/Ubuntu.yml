@@ -1,6 +1,38 @@
 ---
 # tasks file for openldap (Ubuntu specific)
 
+- name: Set OpenLDAP domain
+  debconf: >
+    name=slapd
+    question='slapd/domain'
+    value={{ openldap_domain }}
+    vtype=string
+  tags: openldap
+
+- name: Set OpenLDAP organization
+  debconf: >
+    name=slapd
+    question='shared/organization'
+    value={{ openldap_organization }}
+    vtype=string
+  tags: openldap
+
+- name: Set OpenLDAP admin password
+  debconf: >
+    name=slapd
+    question='slapd/password1'
+    value={{ openldap_admin_password }}
+    vtype=password
+  tags: openldap
+
+- name: Confirm OpenLDAP admin password
+  debconf: >
+    name=slapd
+    question='slapd/password2'
+    value={{ openldap_admin_password }}
+    vtype=password
+  tags: openldap
+
 - name: Install OpenLDAP packages
   apt: name={{ item }} state=present update_cache=yes
   with_items: openldap_packages

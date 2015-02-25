@@ -1,6 +1,10 @@
 ---
 # defaults file for openldap
 
+openldap_domain: example.com
+openldap_organization: example
+openldap_admin_password: password
+
 openldap_sync_consumer: False
 openldap_sync_rid: 0
 openldap_sync_provider: ldap01.example.com

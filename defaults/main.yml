@@ -14,7 +14,7 @@ openldap_sync_network_timeout: 0
 openldap_sync_binddn: cn=admin,dc=example,dc=com
 openldap_sync_credentials: secret
 openldap_sync_keepalive: 0:0:0
-openldap_sync_starttls: no
+openldap_sync_starttls: "no"
 openldap_sync_filter: (objectclass=*)
 openldap_sync_searchbase: dc=example,dc=com
 openldap_sync_scope: sub

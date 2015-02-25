@@ -12,3 +12,7 @@
 - include: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
   tags: openldap
+
+- include: consumer_sync.yml
+  when: openldap_sync
+  tags: openldap

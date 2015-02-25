@@ -1,15 +1,20 @@
 ---
 # defaults file for openldap
 
+openldap_sync_consumer: False
 openldap_sync_rid: 0
 openldap_sync_provider: ldap01.example.com
 openldap_sync_bindmethod: simple
+openldap_sync_timeout: 0
+openldap_sync_network_timeout: 0
 openldap_sync_binddn: cn=admin,dc=example,dc=com
 openldap_sync_credentials: secret
+openldap_sync_keepalive: 0:0:0
+openldap_sync_starttls: no
+openldap_sync_filter: (objectclass=*)
 openldap_sync_searchbase: dc=example,dc=com
-openldap_sync_logbase: cn=accesslog
-openldap_sync_logfilter: (&(objectClass=auditWriteObject)(reqResult=0))
+openldap_sync_scope: sub
 openldap_sync_schemachecking: on
 openldap_sync_type: refreshAndPersist
+openldap_sync_interval: 00:00:02:00
 openldap_sync_retry: 60 +
-openldap_sync_syndata: accesslog

@@ -14,5 +14,5 @@
   tags: openldap
 
 - include: consumer_sync.yml
-  when: openldap_sync
+  when: openldap_sync_consumer
   tags: openldap

@@ -1,0 +1,19 @@
+dn: cn=module{0},cn=config
+changetype: modify
+add: olcModuleLoad
+olcModuleLoad: syncprov
+
+dn: olcDatabase={1}hdb,cn=config
+changetype: modify
+add: olcDbIndex
+olcDbIndex: entryUUID eq
+-
+add: olcSyncRepl
+olcSyncRepl: rid={{ openldap_sync_rid }} provider=ldap://{{ openldap_sync_provider }} bindmethod={{ openldap_sync_bindmethod }}
+binddn="{{ openldap_sync_binddn }}"
+ credentials={{ openldap_sync_credentials }} searchbase="{{ openldap_sync_searchbase }}" logbase="{{ openldap_sync_logbase }}"
+ logfilter="{{ openldap_sync_logfilter }}" schemachecking={{ openldap_sync_schemachecking }}
+ type={{ openldap_sync_type }} retry="{{ openldap_sync_retry }}" syncdata={{ openldap_sync_syncdata }}
+-
+add: olcUpdateRef
+olcUpdateRef: ldap://{{ openldap_sync_provider }}

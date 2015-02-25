@@ -22,6 +22,19 @@
     state=directory
   tags: openldap
 
+- name: Load OpenLDAP schemas
+  command: ldapadd -Y EXTERNAL -H ldapi:// -f /etc/ldap/schema/{{ item }}.ldif
+  with_items:
+    - corba
+    - dyngroup
+    - inetorgperson
+    - java
+    - misc
+    - nis
+    - openldap
+    - ppolicy
+  tags: openldap
+
 - include: consumer_sync.yml
   when: openldap_sync_consumer
   tags: openldap

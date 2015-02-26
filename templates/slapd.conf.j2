@@ -1,0 +1,30 @@
+# {{ ansible_managed }}
+
+# Basics
+
+{% for schema in openldap_server_schemas %}
+include /etc/ldap/schema/{{ schema }}.schema
+{% endfor %}
+
+pidfile {{ openldap_server_pidfile }}
+argsfile {{ openldap_server_argsfile }}
+loglevel {{ openldap_server_loglevel }}
+
+modulepath {{ openldap_server_modulepath }}
+{% for module in openldap_server_modules %}
+moduleload {{ module }}
+{% endfor %}
+
+# Database configuration
+
+database {{ openldap_server_database }}
+suffix "{{ openldap_server_suffix }}"
+rootdn "{{ openldap_server_rootdn }}"
+rootpw {{ openldap_server_rootpw }}
+directory {{ openldap_server_directory }}
+index {{ openldap_server_index }}
+
+# ACLs
+{% for acl in openldap_server_acls %}
+access {{ acl }}
+{% endfor %}

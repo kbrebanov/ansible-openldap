@@ -16,7 +16,8 @@ openldap_server_database: hdb
 openldap_server_suffix: dc=example,dc=com
 openldap_server_rootdn: cn=Manager,dc=example,dc=com
 openldap_server_rootpw: password
-openldap_server_index: objectClass,cn eq
+openldap_server_indexes:
+  - objectClass,cn eq
 openldap_server_acls:
   - to attrs=userPassword by anonymous auth by self write by * none
   - to * by self write by * none

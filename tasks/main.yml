@@ -36,6 +36,15 @@
   when: openldap_sync_consumer
   tags: openldap
 
+- name: Create OpenLDAP client configuration
+  template: >
+    src=ldap.conf.j2
+    dest={{ openldap_client_configuration }}
+    owner=root
+    group=root
+    mode=0644
+  tags: openldap
+
 - name: Ensure OpenLDAP service is started and enabled on boot
   service: name=slapd state=started enabled=yes
   tags: openldap

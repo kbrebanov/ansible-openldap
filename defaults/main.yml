@@ -22,6 +22,12 @@ openldap_server_acls:
   - to attrs=userPassword by anonymous auth by self write by * none
   - to * by self write by * none
 
+openldap_client_uri: ldap://localhost
+openldap_client_base: dc=example,dc=com
+openldap_client_binddn: cn=Manager,dc=example,dc=com
+openldap_client_sizelimit: 0
+openldap_client_timelimit: 0
+
 openldap_sync_consumer: False
 openldap_sync_rid: 0
 openldap_sync_provider: ldap01.example.com

@@ -22,6 +22,11 @@ openldap_server_acls:
   - to attrs=userPassword by anonymous auth by self write by * none
   - to * by self write by * none
 
+openldap_dbconfig_set_cachesize: 2097152
+openldap_dbconfig_set_lk_max_objects: 1500
+openldap_dbconfig_set_lk_max_locks: 1500
+openldap_dbconfig_set_lk_max_lockers: 1500
+
 openldap_client_uri: ldap://localhost
 openldap_client_base: dc=example,dc=com
 openldap_client_binddn: cn=Manager,dc=example,dc=com

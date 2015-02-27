@@ -32,6 +32,16 @@
   notify: restart slapd
   tags: openldap
 
+- name: Create OpenLDAP DB_CONFIG
+  template: >
+    src=DB_CONFIG.j2
+    dest={{ openldap_server_directory }}/DB_CONFIG
+    owner=openldap
+    group=openldap
+    mode=0600
+  notify: restart slapd
+  tags: openldap
+
 - include: consumer_sync.yml
   when: openldap_sync_consumer
   tags: openldap

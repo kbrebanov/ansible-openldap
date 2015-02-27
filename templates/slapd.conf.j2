@@ -28,6 +28,10 @@ directory {{ openldap_server_directory }}
 index {{ index }}
 {% endfor %}
 
+overlay syncprov
+syncprov-checkpoint {{ openldap_sync_syncprov_checkpoint }}
+syncprov-sessionlog {{ openldap_sync_syncprov_sessionlog }}
+
 # ACLs
 {% for acl in openldap_server_acls %}
 access {{ acl }}

@@ -5,6 +5,9 @@ openldap_domain: example.com
 openldap_organization: example
 openldap_admin_password: password
 
+openldap_default_services: ldap:/// ldapi:///
+openldap_default_options: ""
+
 openldap_server_schemas:
   - core
   - cosine

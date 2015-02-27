@@ -22,6 +22,16 @@
     state=directory
   tags: openldap
 
+- name: Create OpenLDAP defaults configuration
+  template: >
+    src=slapd_defaults.j2
+    dest={{ openldap_defaults_file }}
+    owner=root
+    group=root
+    mode=0644
+  notify: restart slapd
+  tags: openldap
+
 - name: Hash OpenLDAP rootpw
   command: slappasswd -h {{ openldap_server_password_hash }} -s {{ openldap_server_rootpw }}
   register: rootpw

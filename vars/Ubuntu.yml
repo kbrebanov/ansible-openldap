@@ -7,6 +7,13 @@ env:
 openldap_packages:
   - slapd
   - ldap-utils
+
+openldap_defaults_file: /etc/default/slapd
+
+openldap_default_user: openldap
+openldap_default_group: openldap
+openldap_default_sentinel_file: /etc/ldap/noslapd
+
 openldap_server_pidfile: /var/run/slapd/slapd.pid
 openldap_server_argsfile: /var/run/slapd/slapd.args
 openldap_server_modulepath: /usr/lib/ldap

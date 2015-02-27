@@ -20,7 +20,7 @@ moduleload {{ module }}
 database {{ openldap_server_database }}
 suffix "{{ openldap_server_suffix }}"
 rootdn "{{ openldap_server_rootdn }}"
-rootpw {{ openldap_server_rootpw }}
+rootpw {{ rootpw.stdout }}
 directory {{ openldap_server_directory }}
 {% for index in openldap_server_indexes %}
 index {{ index }}

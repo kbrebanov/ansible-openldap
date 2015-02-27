@@ -21,6 +21,7 @@ openldap_server_indexes:
 openldap_server_acls:
   - to attrs=userPassword by anonymous auth by self write by * none
   - to * by self write by * none
+openldap_server_password_hash: "{SSHA}"
 
 openldap_dbconfig_set_cachesize: 2097152
 openldap_dbconfig_set_lk_max_objects: 1500

@@ -22,6 +22,11 @@
     state=directory
   tags: openldap
 
+- name: Hash OpenLDAP rootpw
+  command: slappasswd -h {{ openldap_server_password_hash }} -s {{ openldap_server_rootpw }}
+  register: rootpw
+  tags: openldap
+
 - name: Create OpenLDAP server configuration
   template: >
     src=slapd.conf.j2

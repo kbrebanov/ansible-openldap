@@ -10,6 +10,8 @@ pidfile {{ openldap_server_pidfile }}
 argsfile {{ openldap_server_argsfile }}
 loglevel {{ openldap_server_loglevel }}
 
+password-hash {{ openlap_server_password_hash }}
+
 modulepath {{ openldap_server_modulepath }}
 {% for module in openldap_server_modules %}
 moduleload {{ module }}

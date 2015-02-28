@@ -13,15 +13,6 @@
   when: ansible_distribution == "Ubuntu"
   tags: openldap
 
-- name: Create OpenLDAP LDIF configuration directory
-  file: >
-    path=/root/openldap
-    owner=root
-    group=root
-    mode=0750
-    state=directory
-  tags: openldap
-
 - name: Create OpenLDAP defaults configuration
   template: >
     src=slapd_defaults.j2

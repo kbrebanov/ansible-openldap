@@ -23,6 +23,15 @@
   notify: restart slapd
   tags: openldap
 
+- name: Copy Samba LDAP schema
+  copy: >
+    src=samba.schema
+    dest={{ openldap_schema_directory }}
+    owner=root
+    group=root
+    mode=0644
+  tags: openldap
+
 - name: Hash OpenLDAP rootpw
   command: slappasswd -h {{ openldap_server_password_hash }} -s {{ openldap_server_rootpw }}
   register: rootpw

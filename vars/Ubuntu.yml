@@ -20,3 +20,5 @@ openldap_server_modulepath: /usr/lib/ldap
 openldap_server_directory: /var/lib/ldap
 openldap_server_configuration: /etc/ldap/slapd.conf
 openldap_client_configuration: /etc/ldap/ldap.conf
+
+openldap_schema_directory: /etc/ldap/schema

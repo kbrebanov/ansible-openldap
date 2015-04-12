@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Kevin Brebanov
-  description: Installs OpenLDAP
+  description: Installs and configures OpenLDAP
   company:
   # Some suggested licenses:
   # - BSD (default)
